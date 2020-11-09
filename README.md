@@ -1,2 +1,2 @@
 # UrnaEletronica
-Projeto de Urna eletrônica por meio da plataforma blockchain
+Projeto de um Smart Contract que representa uma Urna eletrônica e realiza a votação por meio da plataforma blockchain.
