@@ -5,15 +5,13 @@ The main objective of this publish is suggest an example of smart contract runni
 Introduction
 Smart contract is a technology that consist in formalize contract rules through an algorithm, this code is written in solidity language, and is executed in a data decentralized platform named blockchain, which is simulated in the IDE remix ethereum, allowing automatic events, real time information, transparency, rastreability, immutability and data security.
 
-Não foi fornecido texto alternativo para esta imagem
+
 Development
 In the Brazilians elections, there are an electronic ballot box, responsible to count the voting in each electoral college that allows the electors to type the candidate number. This equipment is demonstrated bellow:
 
-Não foi fornecido texto alternativo para esta imagem
-There is a remote control, normally operated by a poll worker, which allows insert the elector identification number, to verify if the same elector have voted earlier, this verification is important for ensure that the elector can’t vote more than one time in the same election. Also, the poll worker need print a record after and other before the voting period, to prove that the electronic ballot box was started with zero votes (default configuration), and show the result of the computed votes in the end. The step-by-step of the process is demonstrated bellow:
 
-Não foi fornecido texto alternativo para esta imagem
-In this case, shall be created two accounts, one to represent the Ballot Box and other to represent the remote control. The algorithm of this process is demonstrated below:
+There is a remote control, normally operated by a poll worker, which allows insert the elector identification number, to verify if the same elector have voted earlier, this verification is important for ensure that the elector can’t vote more than one time in the same election. Also, the poll worker need print a record after and other before the voting period, to prove that the electronic ballot box was started with zero votes (default configuration), and show the result of the computed votes in the end.
+
 
 Constructor:
 
@@ -137,3 +135,5 @@ modifier verification1(){
 
 Conclusion
 This exercise, demonstrated that is possible use the blockchain technology in the Brazilian elections. Obviously this code need be improved a lot to avoid fraud and to end up in the same level of the Brazilian electronic ballot box, but it is a good example to demonstrate this new techonlogy of smart contracts. The future objectives can be create a web interface to represent the ballot box and the remote control, also develop a test code, to test all posibilities of this algorithm and avoid bugs.
+
+https://www.linkedin.com/pulse/smart-contract-example-elections-blockchain-platform-borba/
