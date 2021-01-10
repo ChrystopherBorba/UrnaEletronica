@@ -17,20 +17,22 @@ In this case, shall be created two accounts, one to represent the Ballot Box and
 
 Constructor:
 
+```
 constructor(uint _ElectoralWard, uint _VotingSection) public  { 
         ElectoralWard = _ElectoralWard;
         VotingSection = _VotingSection;
         BallotBoxAdress = msg.sender;
     }
+```
 Start Voting:
-
+```
 function StartVoting() public verification1(){ 
     
         TimeStampStart = block.timestamp; 
     }
-
+```
 First printing:
-
+```
 function FirstPrinting() public view verification1() returns(uint zona, uint VotingSection, uint _TimeStampStart, uint _CandidateA, uint _CandidateB, uint _BlankVotes, uint _NullVotes){
 
 
@@ -47,9 +49,9 @@ Enable poll worker:
 function EnablePollWorker()public{
         RemoteControllAdress = msg.sender; 
     }
-
+```
 Insert elector ID:
-
+```
 function InsertElectorID(uint _ElectorID) public verification2 {
        
         for(uint i=0; i < ElectorID.length; i++){ 
@@ -66,9 +68,9 @@ Enable electronic ballot box:
 function EnableElectronicBallotBox() public verification4(){
         BallotBoxAdressEnable = true; 
     }
-
+```
 To vote:
-
+```
 function ToVote(uint voto) public verification3(BallotBoxAdressEnable){
         if(BallotBoxAdressEnable == true){ 
             if(voto == NumberCandidateA){
@@ -86,14 +88,16 @@ function ToVote(uint voto) public verification3(BallotBoxAdressEnable){
         }
         BallotBoxAdressEnable = false; 
     }
+```
 Finish voting:
-
+```
 function FinishVoting() public verification1(){
         TimeStampEnd = block.timestamp; 
         BallotBoxAdressEnable = false; 
     }
+```
 Last printing:
-
+```
 function LastPrinting() public view verification1() returns(uint zona, uint VotingSection, uint _TimeStampEnd, uint _CandidateA, uint _CandidateB, uint _BlankVotes, uint _NullVotes){ // retorna o resultado da votação naquela BallotBoxAdress
 
 
@@ -105,8 +109,9 @@ function LastPrinting() public view verification1() returns(uint zona, uint Voti
                 BlankVotes,
                 NullVotes);
     }
+```
 Verifications:
-
+```
 modifier verification1(){
         require(msg.sender == BallotBoxAdress, "This command need come from the electronic Ballot Box Adress");
         _;
@@ -127,30 +132,8 @@ modifier verification1(){
         require(AlreadyVoted == false, "The electronic ballot box is disable, because this elector already voted");
         _;
     }
-The complete code is available in:
-
-
-The step by step to run and test the code is demonstrated below:
-
-Compile:
-
-Não foi fornecido texto alternativo para esta imagem
-Deploy:
-
-The first step is select an account to represent electronic ballot box, whitch in this case was selected the account 0x5B3.
-
-Não foi fornecido texto alternativo para esta imagem
-Click in the arrow next to word "Deploy" to input the data required (optional) and click in "Transact". After this, down the page to see an interface, whitch allows you to interact with the code althrough buttons:
-
-Não foi fornecido texto alternativo para esta imagem
-
-
-After execute the enable poll worker function is necessary change the account, which it will represent the remote control.
-
-The result:
-
-Não foi fornecido texto alternativo para esta imagem
-
+    
+```
 
 Conclusion
 This exercise, demonstrated that is possible use the blockchain technology in the Brazilian elections. Obviously this code need be improved a lot to avoid fraud and to end up in the same level of the Brazilian electronic ballot box, but it is a good example to demonstrate this new techonlogy of smart contracts. The future objectives can be create a web interface to represent the ballot box and the remote control, also develop a test code, to test all posibilities of this algorithm and avoid bugs.
